@@ -46,9 +46,42 @@ public class Employee {
 	 * Fungsi untuk menentukan gaji bulanan pegawai berdasarkan grade kepegawaiannya (grade 1: 3.000.000 per bulan, grade 2: 5.000.000 per bulan, grade 3: 7.000.000 per bulan)
 	 * Jika pegawai adalah warga negara asing gaji bulanan diperbesar sebanyak 50%
 	 */
-	
-	public void addChild(String childName, String childIdNumber) {
-		childNames.add(childName);
-		childIdNumbers.add(childIdNumber);
+
+	public String getEmployeeId() {
+		return employeeId;
 	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public String getIdNumber() {
+		return idNumber;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public boolean isForeigner() {
+		return isForeigner;
+	}
+
+	public int getTotalChildrens(){
+		return childrens.size();
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void addChild(String childName, String childIdNumber) {
+		childrens.add(new Children(childName,childIdNumber));
+	}
+
+
 }
