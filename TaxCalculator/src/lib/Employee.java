@@ -11,7 +11,6 @@ public class Employee {
 	private String lastName;
 	private String idNumber;
 	private String address;
-	
 	private boolean isForeigner;
 	private boolean gender; //true = Laki-laki, false = Perempua
 
