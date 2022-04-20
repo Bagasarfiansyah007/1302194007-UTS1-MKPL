@@ -12,7 +12,13 @@ public class Employee {
 	private String idNumber;
 	private String address;
 	private boolean isForeigner;
-	private boolean gender; //true = Laki-laki, false = Perempua
+
+	public  enum Gender {
+		laki_laki,
+		perempuan,
+	}
+	private Gender gender;//true = Laki-laki, false = Perempuan
+
 
 	private List<Children> childrens;
 	
