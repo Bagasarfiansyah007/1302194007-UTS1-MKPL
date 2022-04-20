@@ -5,11 +5,17 @@ public class Salary extends Employee{
     private int otherMonthlyIncome;
     private int annualDeductible;
 
-    public Salary(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender, int monthlySalary, int otherMonthlyIncome, int annualDeductible) {
-        super(employeeId, firstName, lastName, idNumber, address, yearJoined, monthJoined, dayJoined, isForeigner, gender);
-        this.monthlySalary = monthlySalary;
-        this.otherMonthlyIncome = otherMonthlyIncome;
-        this.annualDeductible = annualDeductible;
+    public  Salary(Employee employee)
+    {
+        super(
+                employee.getEmployeeId(),
+                employee.getFirstName(),
+                employee.getLastName(),
+                employee.getIdNumber(),
+                employee.getAddress(),
+                employee.isForeigner(),
+                employee.getGender()
+        );
     }
 
     public void setMonthlySalary(int grade) {
@@ -31,11 +37,23 @@ public class Salary extends Employee{
         }
     }
 
-    public void setAnnualDeductible(int deductible) {
-        this.annualDeductible = deductible;
+    public void setOtherMonthlyIncome(int otherMonthlyIncome) {
+        this.otherMonthlyIncome = otherMonthlyIncome;
     }
 
-    public void setAdditionalIncome(int income) {
-        this.otherMonthlyIncome = income;
+    public void setAnnualDeductible(int annualDeductible) {
+        this.annualDeductible = annualDeductible;
+    }
+
+    public int getMonthlySalary() {
+        return monthlySalary;
+    }
+
+    public int getOtherMonthlyIncome() {
+        return otherMonthlyIncome;
+    }
+
+    public int getAnnualDeductible() {
+        return annualDeductible;
     }
 }
