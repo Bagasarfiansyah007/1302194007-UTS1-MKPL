@@ -26,19 +26,35 @@ public class TaxFunction {
 		if (numberOfChildren > 3) {
 			numberOfChildren = 3;
 		}
-		
-		if (isMarried) {
-			tax = (int) Math.round(0.05 * (((monthlySalary + otherMonthlyIncome) * numberOfMonthWorking) - deductible - (54000000 + 4500000 + (numberOfChildren * 1500000))));
+
+		if (spouse.getSpouseIdNumber().equals("")) {
+			tax = sumTaxIfEmplyeeMaried(salary,numberOfMonthWorking, numberOfChildren);
 		}else {
-			tax = (int) Math.round(0.05 * (((monthlySalary + otherMonthlyIncome) * numberOfMonthWorking) - deductible - 54000000));
+			tax = sumTaxIfNotEmplyeeMaried(salary, numberOfMonthWorking);
 		}
-		
+
+		return  checkingTaxMustPay(tax);
+			 
+	}
+
+	public static int sumIncome(Salary salary, int numberOfMonthWorking) {
+		return ((salary.getMonthlySalary() + salary.getOtherMonthlyIncome()) * numberOfMonthWorking);
+	}
+
+	public static int checkingTaxMustPay(int tax){
 		if (tax < 0) {
 			return 0;
 		}else {
 			return tax;
 		}
-			 
+	}
+
+	public static int sumTaxIfEmplyeeMaried(Salary salary, int numberOfMonthWorkin, int numberOfChildren){
+		return (int) Math.round(0.05 * (sumIncome(salary, numberOfMonthWorkin)) - salary.getAnnualDeductible() - (54000000 + 4500000 + (numberOfChildren * 1500000)));
+	}
+
+	public static int sumTaxIfNotEmplyeeMaried(Salary salary, int numberOfMonthWorkin){
+		return (int) Math.round(0.05 * ((sumIncome(salary, numberOfMonthWorkin)) - salary.getAnnualDeductible() - 54000000));
 	}
 	
 }
