@@ -13,15 +13,9 @@ public class Employee {
 	private String address;
 	
 	private boolean isForeigner;
-	private boolean gender; //true = Laki-laki, false = Perempuan
-	
+	private boolean gender; //true = Laki-laki, false = Perempua
 
-	
-	private String spouseName;
-	private String spouseIdNumber;
-
-	private List<String> childNames;
-	private List<String> childIdNumbers;
+	private List<Children> childrens;
 	
 	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
 		this.employeeId = employeeId;
@@ -34,9 +28,8 @@ public class Employee {
 		this.dayJoined = dayJoined;
 		this.isForeigner = isForeigner;
 		this.gender = gender;
-		
-		childNames = new LinkedList<String>();
-		childIdNumbers = new LinkedList<String>();
+
+		childrens = new LinkedList<Children>();
 	}
 	
 	/**
