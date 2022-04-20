@@ -15,9 +15,7 @@ public class Employee {
 	private boolean isForeigner;
 	private boolean gender; //true = Laki-laki, false = Perempuan
 	
-	private int monthlySalary;
-	private int otherMonthlyIncome;
-	private int annualDeductible;
+
 	
 	private String spouseName;
 	private String spouseIdNumber;
