@@ -21,16 +21,21 @@ public class Employee {
 
 
 	private List<Children> childrens;
-	
-	public Employee(String employeeId, String firstName, String lastName, String idNumber, String address, int yearJoined, int monthJoined, int dayJoined, boolean isForeigner, boolean gender) {
+
+	public Employee(
+			String employeeId,
+			String firstName,
+			String lastName,
+			String idNumber,
+			String address,
+			boolean isForeigner,
+			Gender gender
+	) {
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.idNumber = idNumber;
 		this.address = address;
-		this.yearJoined = yearJoined;
-		this.monthJoined = monthJoined;
-		this.dayJoined = dayJoined;
 		this.isForeigner = isForeigner;
 		this.gender = gender;
 
@@ -59,19 +64,6 @@ public class Employee {
 				monthlySalary = (int) (3000000 * 1.5);
 			}
 		}
-	}
-	
-	public void setAnnualDeductible(int deductible) {	
-		this.annualDeductible = deductible;
-	}
-	
-	public void setAdditionalIncome(int income) {	
-		this.otherMonthlyIncome = income;
-	}
-	
-	public void setSpouse(String spouseName, String spouseIdNumber) {
-		this.spouseName = spouseName;
-		this.spouseIdNumber = idNumber;
 	}
 	
 	public void addChild(String childName, String childIdNumber) {
